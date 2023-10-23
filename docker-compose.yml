@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db_data/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=adk_W@123lkna3273sw
+      - POSTGRES_USER=raju
+      - POSTGRES_DB=app
