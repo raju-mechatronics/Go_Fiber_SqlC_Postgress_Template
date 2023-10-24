@@ -12,8 +12,8 @@ func main() {
 	utils.FetalError(godotenv.Load())
 	ctx := context.Background()
 	dbHandler := db.InitDB()
-	tx, err := dbHandler.BeginTx(ctx, nil)
-	utils.FetalError(err)
+	tx := utils.HandleFunctionFetal(dbHandler.BeginTx(ctx, nil))
 	q := db.New(tx)
+	print(q)
 	defer db.Close()
 }
