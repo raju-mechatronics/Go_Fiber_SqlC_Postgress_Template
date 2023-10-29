@@ -10,6 +10,7 @@ import (
 
 func main() {
 	utils.FetalError(godotenv.Load())
+
 	ctx := context.Background()
 	dbHandler := db.InitDB()
 	tx := utils.HandleFunctionFetal(dbHandler.BeginTx(ctx, nil))
